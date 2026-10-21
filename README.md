@@ -68,6 +68,15 @@ jdbc.username=root
 jdbc.password=你的密码
 ```
 
+**更推荐的做法**：不动 `db.properties`，而是在同目录新建 `db-local.properties` 只写覆盖项：
+
+```properties
+jdbc.password=你的密码
+```
+
+`DBUtil` 会先读 `db.properties`，再用 `db-local.properties` 覆盖同名项。
+这个文件已在 `.gitignore` 里，**真实密码不会被提交**，团队协作时各人本地配置互不干扰。
+
 ### 3. 启动（无需安装 Tomcat）
 
 ```bash
