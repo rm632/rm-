@@ -12,6 +12,37 @@
 | 退出（配套） | — | `LogoutServlet` (`/logout`) | 销毁会话回到登录页 |
 | 首页（配套） | `home.jsp` | — | 未登录自动打回登录页 |
 
+## 运行效果
+
+> 以下截图均为本机真实运行后截取，不是设计稿。
+
+### JSP 九大内置对象
+
+九个内置对象逐个取出运行时真实值：request 的客户端 IP 与 URI、session 的 SessionID、
+application 的访问计数、out 的缓冲区大小等。
+
+![JSP 九大内置对象](docs/screenshots/01-jsp-objects.png)
+
+### 第 9 个内置对象：exception
+
+只有声明了 `isErrorPage="true"` 的页面才能访问 `exception`，这里输出异常类型、消息与完整堆栈。
+
+![exception 内置对象](docs/screenshots/02-jsp-exception.png)
+
+### 四种作用域
+
+page / request / session / application 写入后立刻读回，四个都可见。
+
+![四种作用域](docs/screenshots/03-jsp-scopes.png)
+
+用 **forward** 跳转后：`page` 失效，`request` 仍然存在。
+
+![forward 后的作用域](docs/screenshots/04-scopes-forward.png)
+
+用 **redirect** 跳转后：`page` 与 `request` 都失效，只有 `session`、`application` 存活。
+
+![redirect 后的作用域](docs/screenshots/05-scopes-redirect.png)
+
 ## 技术栈
 
 - **JDK 8** + **Maven 3.9**
