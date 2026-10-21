@@ -30,6 +30,9 @@ logs/
 # ---- 本地覆盖配置（真实密码不要提交）----
 src/main/resources/db-local.properties
 
+# ---- 本地排障脚本与日志（含临时密码，勿入库）----
+tools/
+
 # ---- 操作系统 ----
 .DS_Store
 Thumbs.db
