@@ -1,0 +1,36 @@
+# ---- Maven ----
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# ---- IntelliJ IDEA ----
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# ---- Eclipse ----
+.classpath
+.project
+.settings/
+.metadata/
+
+# ---- VS Code ----
+.vscode/
+
+# ---- 构建产物 / 运行时 ----
+*.war
+*.class
+*.log
+logs/
+
+# ---- 本地覆盖配置（真实密码不要提交）----
+src/main/resources/db-local.properties
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
