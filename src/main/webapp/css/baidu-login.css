@@ -1,0 +1,261 @@
+/* 仿百度登录页样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    background: #f5f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部品牌区 */
+.topbar {
+    height: 64px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2932e1;
+    letter-spacing: 1px;
+}
+
+.brand .mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2932e1, #4e6ef2);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .tip {
+    font-size: 13px;
+    color: #999;
+}
+
+/* 主体 */
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+    padding: 36px 36px 30px;
+}
+
+.card h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 22px;
+}
+
+/* 选项卡 */
+.tabs {
+    display: flex;
+    gap: 26px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+}
+
+.tabs button {
+    position: relative;
+    padding: 0 2px 12px;
+    font-size: 15px;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tabs button.active {
+    color: #2932e1;
+    font-weight: 500;
+}
+
+.tabs button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: #2932e1;
+    border-radius: 1px;
+}
+
+.tabs button:disabled {
+    color: #c4c4c4;
+    cursor: not-allowed;
+}
+
+/* 输入框 */
+.field {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.field .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #b8bcc6;
+}
+
+.field input {
+    width: 100%;
+    height: 46px;
+    padding: 0 12px 0 38px;
+    font-size: 14px;
+    color: #222;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.field input:focus {
+    border-color: #2932e1;
+    box-shadow: 0 0 0 2px rgba(41, 50, 225, .1);
+}
+
+.field input::placeholder {
+    color: #b8bcc6;
+}
+
+/* 提示信息 */
+.msg {
+    display: none;
+    margin-bottom: 14px;
+    padding: 9px 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+.msg.show {
+    display: block;
+}
+
+.msg.error {
+    color: #d93026;
+    background: #fef2f1;
+    border: 1px solid #fad4d0;
+}
+
+.msg.ok {
+    color: #1a7f37;
+    background: #f0fbf3;
+    border: 1px solid #c6ebd0;
+}
+
+/* 登录按钮 */
+.btn {
+    width: 100%;
+    height: 46px;
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background: #2932e1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .18s, opacity .18s;
+}
+
+.btn:hover {
+    background: #4e6ef2;
+}
+
+.btn:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+}
+
+/* 记住我 / 协议 */
+.row {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #666;
+}
+
+.row input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+    accent-color: #2932e1;
+    cursor: pointer;
+}
+
+.row a,
+.bottom a {
+    color: #2932e1;
+    text-decoration: none;
+}
+
+.row a:hover,
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+/* 底部链接 */
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    font-size: 13px;
+    color: #999;
+}
+
+/* 页脚 */
+.footer {
+    padding: 22px 16px 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #a3a8b3;
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        padding: 0 16px;
+    }
+
+    .card {
+        padding: 28px 22px 24px;
+    }
+}

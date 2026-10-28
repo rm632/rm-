@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 - 用户中心</title>
+    <link rel="stylesheet" href="css/baidu-login.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand"><span class="mark">用</span>用户中心</div>
+    <div class="tip">登录后可同步你的数据</div>
+</header>
+
+<main class="main">
+    <div class="card">
+        <h1>账号登录</h1>
+
+        <div class="tabs" role="tablist">
+            <button type="button" class="active" role="tab">用户名登录</button>
+            <button type="button" disabled role="tab" title="示例项目未实现">短信快捷登录</button>
+        </div>
+
+        <div id="msg" class="msg" role="alert"></div>
+
+        <form id="loginForm" action="api/login" method="post" novalidate>
+            <div class="field">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
+                </svg>
+                <input type="text" id="account" name="account" maxlength="100"
+                       placeholder="手机号 / 用户名 / 邮箱" autocomplete="username" autofocus>
+            </div>
+
+            <div class="field">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4" y="10" width="16" height="10" rx="2"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                </svg>
+                <input type="password" id="password" name="password" maxlength="32"
+                       placeholder="请输入密码" autocomplete="current-password">
+            </div>
+
+            <button class="btn" type="submit" id="submitBtn">登 录</button>
+
+            <label class="row">
+                <input type="checkbox" id="agree" checked>
+                已阅读并同意
+                <a href="javascript:void(0)">《用户协议》</a>和<a href="javascript:void(0)">《隐私政策》</a>
+            </label>
+        </form>
+
+        <div class="bottom">
+            <a href="forgot-password">忘记密码？</a>
+            <a href="register">立即注册</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    © 2026 用户中心 · 演示项目
+</footer>
+
+<script src="js/login-ajax.js"></script>
+</body>
+</html>
